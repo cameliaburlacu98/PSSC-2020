@@ -1,0 +1,29 @@
+->StackOverflow
+
+	In orice domeniu care implica cod, ne izbim de anumite probleme sau erori pe care nu stim sa le rezolvam. Acesta este motivul pentru care avem nevoie de ajutor, fie el si doar sub forma unei idei.
+	Comunicarea intr-un grup de dimensiuni mari(talie mondiala/internationala) poate simplificata daca participantii utilizeaza un forum. In acest context, implementarea lui se va face cu ajutorul 
+unei aplicatii, unde oamenii pot adresa intrebari si pot primi raspunsuri. Aceasta ajuta oamenii :sa obtina raspunsuri la cele mai dificile intrebari de codificare, sa impartaseasca cunostiinte si 
+sa gaseasca locul de munca dorit.
+	Aplicatia include o platforma publica, unde oricine poate sa adreseze intrebari si deopotriva sa raspunda, precum si o platforma privata care permite afisarea 
+informatiei doar intre membrii din cadrul aceleasi echipe.Pe langa facilitatile mai sus mentionate, aceasta aplicatie dedicata 
+domeniului tehnic, ofera facilitati si pentru oamenii care fie au nevoie sa recruteze, fie sa isi gaseasca un loc de munca. 
+	Validarea veridicitatii raspunsurilor a venit ca o necesitate a asigurarii utilizatorilor ca raspunsurile primite sunt intradevar cele corecte.Aceasta validare 
+se face prin acordarea fiecarui utilizator, posibilitatea de a vota raspunsurile, raspunsul cu cele mai multe voturi fiind si cel care beneficiaza de veridicitatea 
+cea mai ridicata.
+
+
+->Ideea mea despre o aplicatie complexa
+	
+	In conceptul premergator pandemiei, procesul de programare a pacientilor in cadrul unui cabinet medical se realiza prin apelarea cadrului/personalului medical 
+si realizarea unei programari intr-un interval de timp prestabilit. Reteta, recomandarile si tratamentul erau oferite fizic de doctor, dupa realizarea consultului.
+	In contextul actual , acest proces trebuie transferat in online . In aceasta privinta este necesara o aplicatie prin care pacientul sa se poata programa online
+la doctor, fara sa-l mai deranjeze in timpul serviciului sau in timpul liber. Pacientul o sa aibe si o harta cu locatia cabinetului . O sa mai faciliteze si de
+un calendar in care va avea marcate toate programarile si va avea si o alarma , ca sa-l anunte sa nu uite de programare . Aplicatia va avea un spatiu dedicat upload-urilor 
+de documente necesare realizarii analizelor ex. copie dupa certificatul de nastere/buletin, copie a analizelelor realizate anterior. Medicul le va extrage si analiza.Tot in aplicatie,
+doctorul va nota tratamentul, recomandariile si reteta.In acest fel, vom reduce posibilitatea ratacirii, pierderii sau deteriorarii lor.
+	Pentru a evita pe de o parte suprasolicitarea personalului medical, iar pe de alta parte supraaglomerarea salilor de asteptare, aplicatia va include si o 
+sectiune dedicata COVID-19. Aceasta va pune la dispozitia pacientiilor formularul oficial de covid, care poate fi descarcat cu o zi inainte de consultatie si completat.
+
+
+	
+
