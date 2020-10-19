@@ -7,7 +7,7 @@ using static Question.Domain.CreateNewQuestionWorkflow.CreateNewQuestionResult;
 
 namespace Test.App
 {
-    class Program
+    class Program_Question
     {
         static void Main(string[] args)
         {
