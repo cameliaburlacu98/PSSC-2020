@@ -9,6 +9,7 @@ namespace Question.Domain.CreateNewQuestionWorkflow
     /// <summary>
     /// SUM type:
     /// </summary>
+    [AsChoice]
     public static partial class CreateNewQuestionResult
     {
         /// <summary>
