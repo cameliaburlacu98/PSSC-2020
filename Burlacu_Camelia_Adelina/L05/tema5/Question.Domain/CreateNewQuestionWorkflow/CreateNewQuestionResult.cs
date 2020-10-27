@@ -28,6 +28,7 @@ namespace Question.Domain.CreateNewQuestionWorkflow
             public string Question { get; private set; }
             public int VoteCount { get; private set; }
             public IReadOnlyCollection<VoteEnum> AllVotes { get; private set; }
+            // clasa VoteUpdateQuestion este pentru cerinta : scorul obtinut din voturi trebuie sa corespunda cu suma tuturor voturilor individualei
 
             public QuestionPosted(Guid questionId, string question,int voteCount, IReadOnlyCollection<VoteEnum> allVotes)
             {
