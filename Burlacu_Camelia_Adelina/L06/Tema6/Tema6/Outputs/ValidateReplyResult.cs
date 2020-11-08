@@ -30,11 +30,10 @@ namespace Tema6.Outputs
         public class InvalidRequest:IValidateReplyResult
         {
             public string ValidationErrors { get; }
-            public ValidateReplyCmd Cmd { get; }
-            public InvalidRequest(string validationErrors, ValidateReplyCmd cmd)
+            public InvalidRequest(string validationErrors)
             {
                 ValidationErrors = validationErrors;
-                Cmd = cmd;
+                
             }
         }
     }

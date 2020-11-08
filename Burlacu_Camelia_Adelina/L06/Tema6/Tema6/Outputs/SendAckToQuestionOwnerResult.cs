@@ -9,16 +9,16 @@ namespace Tema6.Outputs
         public interface ISendAckToQuestionOwnerResult { };
         public class ReplyReceived:ISendAckToQuestionOwnerResult
         {
-            public string Text { get; }
-            public ReplyReceived(string text)
+            public String Text { get; }
+            public ReplyReceived(String text)
             {
                 Text = text;
             }
         }
         public class InvalidReplyReceived:ISendAckToQuestionOwnerResult
         {
-            public string ErrorMessage { get; }
-            public InvalidReplyReceived(string errormessage)
+            public String ErrorMessage { get; }
+            public InvalidReplyReceived(String errormessage)
             {
                 ErrorMessage = errormessage;
             }
