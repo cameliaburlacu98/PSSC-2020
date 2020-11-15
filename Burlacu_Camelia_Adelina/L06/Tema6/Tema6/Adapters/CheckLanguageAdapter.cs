@@ -11,14 +11,14 @@ using static LanguageExt.Prelude;
 
 namespace Tema6.Adapters
 {
-    class CheckLanguageAdapter:Adapter<CheckLanguageCmd, CheckLanguageResult.ICheckLanguageResult,Unit>
+    class CheckLanguageAdapter:Adapter<CheckLanguageCmd, CheckLanguageResult.ICheckLanguageResult, QuestionWriteContext>
     {
-        public override Task PostConditions(CheckLanguageCmd cmd, CheckLanguageResult.ICheckLanguageResult result, Unit state)
+        public override Task PostConditions(CheckLanguageCmd cmd, CheckLanguageResult.ICheckLanguageResult result, QuestionWriteContext state)
         {
             return Task.CompletedTask;
         }
 
-        public override async Task<CheckLanguageResult.ICheckLanguageResult> Work(CheckLanguageCmd cmd, Unit state)
+        public override async Task<CheckLanguageResult.ICheckLanguageResult> Work(CheckLanguageCmd cmd, QuestionWriteContext state)
         {
             var wf = from isValid in cmd.TryValidate()
                      from checkLanguageResult in CheckLanguageResult(cmd, state)
@@ -29,7 +29,7 @@ namespace Tema6.Adapters
         }
 
 
-        private TryAsync<CheckLanguageResult.ICheckLanguageResult> CheckLanguageResult(CheckLanguageCmd cmd, Unit state)
+        private TryAsync<CheckLanguageResult.ICheckLanguageResult> CheckLanguageResult(CheckLanguageCmd cmd, QuestionWriteContext state)
         {
 
             return TryAsync<CheckLanguageResult.ICheckLanguageResult>(async () =>

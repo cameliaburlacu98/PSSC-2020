@@ -11,14 +11,14 @@ using static LanguageExt.Prelude;
 
 namespace Tema6.Adapters
 {
-    class SenAckToQuestionOwnerAdapter : Adapter<SendAckToQuestionOwnerCmd, SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult, Unit>
+    class SenAckToQuestionOwnerAdapter : Adapter<SendAckToQuestionOwnerCmd, SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult, QuestionWriteContext>
     {
-        public override Task PostConditions(SendAckToQuestionOwnerCmd cmd, SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult result, Unit state)
+        public override Task PostConditions(SendAckToQuestionOwnerCmd cmd, SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult result, QuestionWriteContext state)
         {
             return Task.CompletedTask;
         }
 
-        public override async Task<SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult> Work(SendAckToQuestionOwnerCmd cmd, Unit state)
+        public override async Task<SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult> Work(SendAckToQuestionOwnerCmd cmd, QuestionWriteContext state)
         {
             var wf = from isValid in cmd.TryValidate()
                      from ownerAck in OwnerAckResult(cmd, state)
@@ -27,7 +27,7 @@ namespace Tema6.Adapters
                   Succ: owner => owner,
                   Fail: ex => new SendAckToQuestionOwnerResult.InvalidReplyReceived(ex.ToString()));
         }
-        private TryAsync<SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult> OwnerAckResult(SendAckToQuestionOwnerCmd cmd, Unit state)
+        private TryAsync<SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult> OwnerAckResult(SendAckToQuestionOwnerCmd cmd, QuestionWriteContext state)
         {
 
             return TryAsync<SendAckToQuestionOwnerResult.ISendAckToQuestionOwnerResult>(async () =>

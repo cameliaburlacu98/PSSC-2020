@@ -11,14 +11,14 @@ using static LanguageExt.Prelude;
 namespace Tema6.Adapters
 {
 
-    class SendAckToReplyAuthorAdapter : Adapter<SendAckToReplyAuthorCmd, SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult, Unit>
+    class SendAckToReplyAuthorAdapter : Adapter<SendAckToReplyAuthorCmd, SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult, QuestionWriteContext>
     {
-        public override Task PostConditions(SendAckToReplyAuthorCmd cmd, SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult result, Unit state)
+        public override Task PostConditions(SendAckToReplyAuthorCmd cmd, SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult result, QuestionWriteContext state)
         {
             return Task.CompletedTask;
         }
 
-        public override async Task<SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult> Work(SendAckToReplyAuthorCmd cmd, Unit state)
+        public override async Task<SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult> Work(SendAckToReplyAuthorCmd cmd, QuestionWriteContext state)
         {
             var wf = from isValid in cmd.TryValidate()
                      from authorAck in AuthorAckResult(cmd, state)
@@ -27,7 +27,7 @@ namespace Tema6.Adapters
                   Succ: author => author,
                   Fail: ex => new SendAckToReplyAuthorResult.InvalidReplyPublished(ex.ToString()));
         }
-        private TryAsync<SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult> AuthorAckResult(SendAckToReplyAuthorCmd cmd, Unit state)
+        private TryAsync<SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult> AuthorAckResult(SendAckToReplyAuthorCmd cmd, QuestionWriteContext state)
         {
 
             return TryAsync<SendAckToReplyAuthorResult.ISendAskToReplyAuthorResult>(async () =>

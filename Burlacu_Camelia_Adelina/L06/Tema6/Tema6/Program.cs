@@ -27,6 +27,7 @@ namespace Tema6_18
                 .AddOperations(typeof(ValidateReplyAdapter).Assembly)
                 .AddOperations(typeof(CheckLanguageAdapter).Assembly)
                 .AddOperations(typeof(SenAckToQuestionOwnerAdapter).Assembly)
+                .AddOperations(typeof(SendAckToReplyAuthorAdapter).Assembly)
                 .AddTransient<IInterpreterAsync>(sp => new LiveInterpreterAsync(sp))
                 .BuildServiceProvider();
             var interpreter = serviceProvider.GetService<IInterpreterAsync>();
